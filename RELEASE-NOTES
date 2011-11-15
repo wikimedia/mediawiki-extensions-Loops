@@ -6,9 +6,11 @@
      counter, for example including an special page in wikitext. This has been solved now.
    - Language file clean-up.
    - Internal structure changed, ExtLoops now works as a static class.
+   - '#fornumargs' parameter 1 can be empty to make it more consistent with other Loop parser
+     functions. E.g. '{{#fornumargs: | keyVarName | valVarName | code }}' istead of
+	 '{{#fornumargs: keyVarName | valVarName | code }}' (which still works as well).
    @ToDo: Open points for final 0.4 release:
    - Compatbility to Variables Version 2.0.
-   - '#fornumargs' parameter 1 optional to make it more consistent with other functions.
    
  * November 15, 2011 -- Version 0.3.2 by Daniel Werner
    - Bug solved where '#loop' didn't create variables with name or starting index '0'.

@@ -201,6 +201,8 @@ class ExtLoops {
 	
 	/**
 	 * #fornumargs: keyVarName | valVarName | code
+	 * or (since 0.4 for more consistency)
+	 * #fornumargs: | keyVarName | valVarName | code
 	 */
 	public static function pfObj_fornumargs( Parser &$parser, $frame, $args ) {
 		/*
@@ -215,6 +217,12 @@ class ExtLoops {
 			}
 		}
 		ksort( $tNumArgs ); // sort from lowest to highest
+		
+		if( count( $args ) > 3 ) {
+			// compatbility to pre 0.4 but consistency with other Loop functions.
+			// this way the first argument can be ommitted like '#fornumargs: |varKey |varVal |code'
+			array_shift( $args );
+		}
 		
 		return self::perform_forargs( $parser, $frame, $args, $tNumArgs, '' );
 	}
