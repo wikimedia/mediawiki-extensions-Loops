@@ -5,6 +5,7 @@
    - The loops count now counts per parser instance. Before there were several hacks to reset the
      counter, for example including an special page in wikitext. This has been solved now.
    - Compatbility to Variables Version 2.0.
+   - Configuration variable '$egLoopsDisabledFunctions' to disable certain Loops parser functions.
    - Language file clean-up.
    - Internal structure changed, ExtLoops now works as a static class.
    - '#fornumargs' parameter 1 can be empty to make it more consistent with other Loop parser

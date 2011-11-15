@@ -35,6 +35,9 @@ $wgExtensionMessagesFiles['LoopsMagic'] = ExtLoops::getDir() . '/Loops.i18n.magi
 $wgHooks['ParserFirstCallInit'][] = 'ExtLoops::init';
 $wgHooks['ParserClearState'   ][] = 'ExtLoops::onParserClearState';
 
+// Include the settings file:
+require_once ExtLoops::getDir() . '/Loops_Settings.php';
+
 
 /**
  * Class representing extension 'Loops', containing all parser functions and other
@@ -90,9 +93,16 @@ class ExtLoops {
 		
 		return true;
 	}
-	private static function initFunction( Parser &$parser, $name ) {		
+	private static function initFunction( Parser &$parser, $name ) {
+		global $egLoopsDisabledFunctions;
+		
+		// don't register parser function if disabled by configuration:
+		if( ! in_array( $name, $egLoopsDisabledFunctions ) ) {
+			return;
+		}
+		
 		$functionCallback = array( __CLASS__, 'pfObj_' . $name );
-		$parser->setFunctionHook( $name, $functionCallback, SFH_OBJECT_ARGS );		
+		$parser->setFunctionHook( $name, $functionCallback, SFH_OBJECT_ARGS );
 	}
 	
 
