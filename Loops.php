@@ -161,24 +161,24 @@ class ExtLoops {
 			// no loops to perform
 			return '';
 		}
-		
-		global $wgExtVariables;
-		
+				
 		$output = '';
 		$endVal = $startVal + $loops;
+		$i = $startVal;
 		
-		while( $startVal !== $endVal ) {
+		while( $i !== $endVal ) {
 			// limit check:
 			if( ! self::incrCounter( $parser ) ) {
 				return self::msgLoopsLimit( $output );
 			}
 			
-			$wgExtVariables->vardefine( $parser, $varName, (string)$startVal );
+			// set current position as variable:
+			self::setVariable( $parser, $varName, (string)$i );
 			
 			$output .= trim( $frame->expand( $rawCode ) );
 			
 			// in-/decrease loop count (count can be negative):
-			( $startVal < $endVal ) ? $startVal++ : $startVal--;
+			( $i < $endVal ) ? $i++ : $i--;
 		}
 		return $output;
 	}
@@ -245,8 +245,7 @@ class ExtLoops {
 		// unexpanded code:
 		$rawCode = array_shift( $funcArgs );
 		$rawCode = $rawCode !== null ? $rawCode : '';
-		
-		global $wgExtVariables;
+				
 		$output = '';
 		
 		// if prefix contains numbers only or isn't set, get all arguments, otherwise just non-numeric
@@ -259,21 +258,44 @@ class ExtLoops {
 				continue;
 			}
 			if ( $keyVar !== $valVar ) {
-				// variable with the argument name as value
-				$wgExtVariables->vardefine(
-						$parser,
-						$keyVar,
-						trim( substr( $argName, strlen( $prefix ) ) )
-				);
+				// variable with the argument name without prefix as value:
+				self::setVariable( $parser, $keyVar, substr( $argName, strlen( $prefix ) ) );
 			}
-			// variable with the arguments value
-			$wgExtVariables->vardefine( $parser, $valVar, trim( $argVal ) );
+			// variable with the arguments value:
+			self::setVariable( $parser, $valVar, $argVal );
 
 			// expand current run:
 			$output .= trim( $frame->expand( $rawCode ) );			
 		}
 		
 		return $output;
+	}
+	
+	/**
+	 * Connects to 'Variables' extension and sets a variable. Handles different versions of
+	 * 'Variables' extension since there have changed some things along the way.
+	 * 
+	 * @param Parser $parser
+	 * @param string $varName
+	 * @param string $varValue
+	 */
+	private static function setVariable( Parser &$parser, $varName, $varValue ) {
+		global $wgExtVariables;
+		
+		static $newVersion = null;
+		if( $newVersion === null ) {
+			// find out whether local wiki is using variables extension 2.0 or higher
+			$newVersion = ( defined( 'ExtVariables::VERSION' ) && version_compare( ExtVariables::VERSION, '1.9999', '>' ) );
+		}
+		
+		if( $newVersion ) {
+			// clean way since Variables 2.0:
+			ExtVariables::get( $parser )->setVarValue( $varName, $varValue );
+		}
+		else {
+			// make sure to trim values and convert them to string since old versions of Variables extension won't do this.
+			$wgExtVariables->vardefine( $parser, trim( $varName ), trim( $varValue ) );
+		}
 	}
 	
 	
