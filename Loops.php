@@ -77,7 +77,17 @@ class ExtLoops {
 	* @since 0.4
 	*/
 	public static function init( Parser &$parser ) {
-
+		
+		if( ! class_exists( 'ExtVariables' ) ) {
+			/*
+			 * If Variables extension not defined, we can't use certain functions.
+			 * Make sure they are disabled:
+			 */
+			global $egLoopsDisabledFunctions;
+			$disabledFunctions = array( 'loop', 'forargs', 'fornumargs' );
+			$egLoopsDisabledFunctions = array_merge( $egLoopsDisabledFunctions, $disabledFunctions );
+		}
+		
 		/*
 		 * store for loops count per parser object. This will solve several bugs related to
 		 * 'ParserClearState' hook resetting the count early in combination with certain
@@ -97,7 +107,7 @@ class ExtLoops {
 		global $egLoopsDisabledFunctions;
 		
 		// don't register parser function if disabled by configuration:
-		if( ! in_array( $name, $egLoopsDisabledFunctions ) ) {
+		if( in_array( $name, $egLoopsDisabledFunctions ) ) {
 			return;
 		}
 		
@@ -242,8 +252,8 @@ class ExtLoops {
 	 */
 	protected static function perform_forargs( Parser &$parser, PPFrame $frame, array $funcArgs, array $templateArgs, $prefix = '' ) {
 		// if not called within template instance:
-		if( !( $frame instanceof PPTemplateFrame_DOM ) ) {
-			return array( 'found' => false );
+		if( !( $frame->isTemplate() ) ) {
+			return '';
 		}
 		
 		// name of the variable to store the argument name:
