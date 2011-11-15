@@ -1,55 +1,30 @@
 <?php
- 
-class Loops_i18n {
-	private $words = array(
-		// English
-		'en' => array(
-			'dowhile' => array( 0, 'dowhile' ),
-			'while' => array( 0, 'while' ),
-			'forargs' => array( 0, 'forargs' ),
-			'fornumargs' => array( 0, 'fornumargs' ),
-			'loop' => array( 0, 'loop' ),
-		),
-	);
- 
-	private $messages = array(
-		// English
-		'en' => array(
-			'loops_max' => 'Maximum number of loops have been performed',
-		)
-	);
- 
-	private static $instance = null;
- 
-	public static function getInstance() {
-		// create the singleton if needed
-		if ( self::$instance === null ) {
-			self::$instance = new self();
-		}
- 
-		return self::$instance;
-	}
- 
-	/**
-	 * limited-access constructor to insure singleton
-	 */
-	protected function __construct() { }
- 
-	/**
-	 * Get translated magic words, if available
-	 *
-	 * @param $lang String: language code
-	 * @return array
-	 */
-	public function magicWords( $lang ) {
-		// English is used as a fallback, and the English synonyms are
-		// used if a translation has not been provided for a given word
-		return ( $lang == 'en' || !isset( $this->words[$lang] ) ) ?
-			$this->words['en'] :
-			array_merge( $this->words['en'], $this->words[$lang] );
-	}
- 
-	public function getMessages() {
-		return $this->messages;
-	}
-}
+#coding: utf-8
+
+/**
+ * Internationalization file of the 'Loops' extension.
+ *
+ * @since 0.4
+ *
+ * @file Loops.i18n.php
+ * @ingroup Loops
+ * @author Daniel Werner < danweetz@web.de >
+ */
+
+$messages = array();
+
+/** English
+ * @author David M. Sledge
+ */
+$messages['en'] = array(
+	'loops-desc' => 'Parser functions for performing loops',
+	'loops_max' => 'Maximum number of loops have been performed'
+);
+
+/** German
+ * @author Daniel Werner
+ */
+$messages['de'] = array(
+	'loops-desc' => 'Parser-Funktionen zur Schleifen-Ausführung',
+	'loops_max' => 'Die maximal erlaubte Anzahl an Schleifen wurde ausgeführt'
+);

@@ -1,13 +1,22 @@
  Post svn Changelog:
  ===================
 
- * Version 0.3.2 by Daniel Werner
+ * (trunk) -- Version 0.4 alpha by Daniel Werner
+   - The loops count now counts per parser instance. Before there were several hacks to reset the
+     counter, for example including an special page in wikitext. This has been solved now.
+   - Language file clean-up.
+   - Internal structure changed, ExtLoops now works as a static class.
+   @ToDo: Open points for final 0.4 release:
+   - Compatbility to Variables Version 2.0.
+   - '#fornumargs' parameter 1 optional to make it more consistent with other functions.
+   
+ * November 15, 2011 -- Version 0.3.2 by Daniel Werner
    - Bug solved where '#loop' didn't create variables with name or starting index '0'.
    - minor '#forargs' and '#fornumargs' bug solved where unnamed numeric argument values
      could have ended up as variable value with leading space.
    - 'README' and 'RELEASE-NOTES' files added.
    - Put into mediawiki.org svn repository.
- 
+   
  
  Pre svn Changelog:
  ==================
