@@ -1,0 +1,28 @@
+ Post svn Changelog:
+ ===================
+
+ * Version 0.3.2 by Daniel Werner
+   - Bug solved where '#loop' didn't create variables with name or starting index '0'.
+   - minor '#forargs' and '#fornumargs' bug solved where unnamed numeric argument values
+     could have ended up as variable value with leading space.
+   - 'README' and 'RELEASE-NOTES' files added.
+   - Put into mediawiki.org svn repository.
+ 
+ 
+ Pre svn Changelog:
+ ==================
+
+ The following pre-svn changelog was composed after the extension has been moved into mediawiki.org
+ svn. All changes can still be retrace at:
+
+ http://www.mediawiki.org/w/index.php?title=Extension:Loops&action=history 
+
+ * Version 0.3.0 by David M. Sledge
+   - '#loop' and '#fornumargs' parser functions were introduced.
+   - '#foreachnamedarg' renamed to '#forargs' and loops through indexed template arguments as well
+     as named arguments now.
+
+ * Version 0.2.0 by David M. Sledge
+   - '#foreachnamedarg' parser function introduced. Allows to loop through named template arguments.     
+
+ * Version 0.1.0 (initial release) by David M. Sledge
