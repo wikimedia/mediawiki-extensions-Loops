@@ -1,6 +1,4 @@
 <?php
-#coding: utf-8
-
 /**
  * Internationalization file of the 'Loops' extension.
  *
@@ -28,3 +26,4 @@ $messages['de'] = array(
 	'loops-desc' => 'Parser-Funktionen zur Schleifen-Ausführung',
 	'loops_max' => 'Die maximal erlaubte Anzahl an Schleifen wurde ausgeführt'
 );
+
