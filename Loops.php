@@ -7,7 +7,7 @@
  * Support:       http://www.mediawiki.org/wiki/Extension_talk:Loops
  * Source code:   http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Loops
  * 
- * @version: 0.4 alpha
+ * @version: 0.4
  * @license: GNU GPL v2 or higher
  * @author:  David M. Sledge
  * @author:  Daniel Werner < danweetz@web.de >
@@ -46,7 +46,7 @@ require_once ExtLoops::getDir() . '/Loops_Settings.php';
  */
 class ExtLoops {
 		
-	const VERSION = '0.4 alpha';
+	const VERSION = '0.4';
 	
 	/**
 	 * Configuration variable defining maximum allowed number of loops ('-1' => no limit).

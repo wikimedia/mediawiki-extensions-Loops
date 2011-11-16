@@ -1,10 +1,10 @@
  Post svn Changelog:
  ===================
 
- * (trunk) -- Version 0.4 alpha by Daniel Werner
+ * November 16, 2011 -- Version 0.4 by Daniel Werner
    - The loops count now counts per parser instance. Before there were several hacks to reset the
      counter, for example a special-page inclusion. This has been solved now.
-   - 'Loops' is working with MW 1.18+ now. Should be compatible down to MW 1.12.
+   - 'Loops' is working with MW 1.18+ now. Should be compatible down to MW 1.14 or even further.
    - Compatbility to Variables Version 2.0.
    - Configuration variable '$egLoopsEnabledFunctions' to enable certain Loops parser functions only.
    - If 'Variables' extension is not active, '#loop', '#forargs' and '#fornumargs' will be disabled.
