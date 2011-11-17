@@ -27,12 +27,28 @@ $messages['de'] = array(
 	'loops_max' => 'Die maximal erlaubte Anzahl an Schleifen wurde ausgeführt',
 );
 
+/** French (Français)
+ * @author DavidL
+ */
+$messages['fr'] = array(
+	'loops-desc' => "Fonctions de l'interpréteur pour effectuer des boucles",
+	'loops_max' => 'Le nombre maximal de boucles a été effectué',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */
 $messages['gl'] = array(
 	'loops-desc' => 'Funcións analíticas para levar a cabo bucles',
 	'loops_max' => 'Levouse a cabo o número máximo de bucles',
+);
+
+/** Interlingua (Interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'loops-desc' => 'Functiones de analysator syntactic pro executar iterationes',
+	'loops_max' => 'Le numero maxime de iterationes ha essite executate',
 );
 
 /** Macedonian (Македонски)
