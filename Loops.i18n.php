@@ -43,6 +43,14 @@ $messages['gl'] = array(
 	'loops_max' => 'Levouse a cabo o número máximo de bucles',
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'loops-desc' => 'Parserowe funkcije za wuwjedźenje seklow',
+	'loops_max' => 'Maksimalna ličba seklow je so wuwjedła',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
