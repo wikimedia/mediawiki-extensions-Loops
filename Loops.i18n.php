@@ -59,6 +59,14 @@ $messages['ia'] = array(
 	'loops_max' => 'Le numero maxime de iterationes ha essite executate',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'loops-desc' => 'Parser-Fonctioune fir Schleefen auszeféieren',
+	'loops_max' => 'Déi maximal Zuel vun erlaabte Schleefe gouf ausgefouert',
+);
+
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  */
@@ -73,5 +81,13 @@ $messages['mk'] = array(
 $messages['ms'] = array(
 	'loops-desc' => 'Fungsi parser untuk melakukan gelung',
 	'loops_max' => 'Bilangan gelung maksimum telah dilakukan',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'loops-desc' => 'Parserfuncties voor het uitvoeren van herhalingen',
+	'loops_max' => 'Het maximum aantal herhalingen is uitgevoerd',
 );
 
