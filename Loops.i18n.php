@@ -59,6 +59,14 @@ $messages['ia'] = array(
 	'loops_max' => 'Le numero maxime de iterationes ha essite executate',
 );
 
+/** Japanese (日本語)
+ * @author Fryed-peach
+ */
+$messages['ja'] = array(
+	'loops-desc' => 'ループを実行するためのパーサー関数',
+	'loops_max' => 'ループの最大実行回数に達しました',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
