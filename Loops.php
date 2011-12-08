@@ -19,12 +19,12 @@
 if ( ! defined( 'MEDIAWIKI' ) ) { die( ); }
  
 $wgExtensionCredits['parserhook'][] = array(
-	'path'          => __FILE__,
-	'author' => array( 'David M. Sledge', '[http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]' ),
-	'name' => 'Loops',
-	'version' => ExtLoops::VERSION,
+	'path'           => __FILE__,
+	'author'         => array( 'David M. Sledge', '[http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]' ),
+	'name'           => 'Loops',
+	'version'        => ExtLoops::VERSION,
 	'descriptionmsg' => 'loops-desc',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Loops',
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:Loops',
 );
 
 // language files:
