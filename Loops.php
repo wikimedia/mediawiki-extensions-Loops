@@ -24,7 +24,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'name'           => 'Loops',
 	'version'        => ExtLoops::VERSION,
 	'descriptionmsg' => 'loops-desc',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Loops',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:Loops',
 );
 
 // language files:
