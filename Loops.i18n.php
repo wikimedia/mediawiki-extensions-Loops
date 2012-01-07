@@ -19,6 +19,14 @@ $messages['en'] = array(
 	'loops_max' => 'Maximum number of loops have been performed'
 );
 
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'loops-desc' => 'Функцыі парсэра для стварэньня цыклаў',
+	'loops_max' => 'Максымальная колькасьць цыклаў',
+);
+
 /** German (Deutsch)
  * @author Daniel Werner
  */
@@ -97,5 +105,13 @@ $messages['ms'] = array(
 $messages['nl'] = array(
 	'loops-desc' => 'Parserfuncties voor het uitvoeren van herhalingen',
 	'loops_max' => 'Het maximum aantal herhalingen is uitgevoerd',
+);
+
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'loops-desc' => 'Funsion dël parser për fé ëd sicl',
+	'loops_max' => "Màssim nùmer ëd sicl ch'a son stàit fàit",
 );
 
