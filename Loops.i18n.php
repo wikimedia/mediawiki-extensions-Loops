@@ -108,10 +108,11 @@ $messages['nl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'loops-desc' => 'Funsion dël parser për fé ëd sicl',
+	'loops-desc' => "Funsion dl'analisator për fé dij sicl",
 	'loops_max' => "Màssim nùmer ëd sicl ch'a son stàit fàit",
 );
 
