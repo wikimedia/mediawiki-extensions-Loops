@@ -35,6 +35,14 @@ $messages['de'] = array(
 	'loops_max' => 'Die maximal erlaubte Anzahl an Schleifen wurde ausgeführt',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'loops-desc' => 'Parserowe funkcije za wuwjeźenje kokulow',
+	'loops_max' => 'Maksimalna licba kokulow jo se wuwjadła',
+);
+
 /** French (Français)
  * @author DavidL
  */
