@@ -59,6 +59,14 @@ $messages['gl'] = array(
 	'loops_max' => 'Levouse a cabo o número máximo de bucles',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'loops-desc' => 'פונקציות מפענח לביצוע לולאות',
+	'loops_max' => 'בוצע מספר מרבי של לולאות',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
