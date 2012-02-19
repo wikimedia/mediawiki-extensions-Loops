@@ -123,6 +123,14 @@ $messages['nl'] = array(
 	'loops_max' => 'Het maximum aantal herhalingen is uitgevoerd',
 );
 
+/** Polish (Polski)
+ * @author BeginaFelicysym
+ */
+$messages['pl'] = array(
+	'loops-desc' => 'Funkcje analizatora składni do wykonywania pętli',
+	'loops_max' => 'Została wykonana maksymalna liczba pętli',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Borichèt
  * @author Dragonòt
