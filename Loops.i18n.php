@@ -43,6 +43,14 @@ $messages['dsb'] = array(
 	'loops_max' => 'Maksimalna licba kokulow jo se wuwjadła',
 );
 
+/** Spanish (Español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'loops-desc' => 'Funciones de analizador (parser) para realizar bucles',
+	'loops_max' => 'Se ha realizado el número máximo de bucles',
+);
+
 /** French (Français)
  * @author DavidL
  */
