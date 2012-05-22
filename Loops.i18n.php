@@ -91,6 +91,14 @@ $messages['ia'] = array(
 	'loops_max' => 'Le numero maxime de iterationes ha essite executate',
 );
 
+/** Italian (Italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'loops-desc' => "Funzioni parser per l'esecuzione di cicli",
+	'loops_max' => "E' stato eseguito il numero massimo di cicli",
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  */
