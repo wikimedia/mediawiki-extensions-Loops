@@ -19,6 +19,13 @@ $messages['en'] = array(
 	'loops_max' => 'Maximum number of loops have been performed'
 );
 
+/** Message documentation (Message documentation)
+ * @author Purodha
+ */
+$messages['qqq'] = array(
+	'loops-desc' => '{{desc}}',
+);
+
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author Wizardist
  */
@@ -105,6 +112,14 @@ $messages['it'] = array(
 $messages['ja'] = array(
 	'loops-desc' => 'ループを実行するためのパーサー関数',
 	'loops_max' => 'ループの最大実行回数に達しました',
+);
+
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'loops-desc' => 'Paaser-Funxjuhne för Schleife ußzeföhre.',
+	'loops_max' => 'De jrüüßte müjjelesche Zahl vun Schleife es dorschloufe woode.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
