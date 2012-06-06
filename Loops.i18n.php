@@ -114,6 +114,14 @@ $messages['ja'] = array(
 	'loops_max' => 'ループの最大実行回数に達しました',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'loops-desc' => '루프를 수행하는 것에 대한 파서 함수',
+	'loops_max' => '루프의 최대 수가 수행되었습니다',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
