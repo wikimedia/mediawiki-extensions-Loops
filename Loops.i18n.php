@@ -50,7 +50,7 @@ $messages['dsb'] = array(
 	'loops_max' => 'Maksimalna licba kokulow jo se wuwjadła',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
@@ -58,7 +58,7 @@ $messages['es'] = array(
 	'loops_max' => 'Se ha realizado el número máximo de bucles',
 );
 
-/** French (Français)
+/** French (français)
  * @author DavidL
  */
 $messages['fr'] = array(
@@ -90,7 +90,7 @@ $messages['hsb'] = array(
 	'loops_max' => 'Maksimalna ličba seklow je so wuwjedła',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -98,7 +98,7 @@ $messages['ia'] = array(
 	'loops_max' => 'Le numero maxime de iterationes ha essite executate',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  */
 $messages['it'] = array(
@@ -138,7 +138,7 @@ $messages['lb'] = array(
 	'loops_max' => 'Déi maximal Zuel vun erlaabte Schleefe gouf ausgefouert',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -162,7 +162,7 @@ $messages['nl'] = array(
 	'loops_max' => 'Het maximum aantal herhalingen is uitgevoerd',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  */
 $messages['pl'] = array(
