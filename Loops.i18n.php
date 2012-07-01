@@ -26,7 +26,7 @@ $messages['qqq'] = array(
 	'loops-desc' => '{{desc}}',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -42,7 +42,7 @@ $messages['de'] = array(
 	'loops_max' => 'Die maximal erlaubte Anzahl an Schleifen wurde ausgeführt',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -66,7 +66,7 @@ $messages['fr'] = array(
 	'loops_max' => 'Le nombre maximal de boucles a été effectué',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -82,7 +82,7 @@ $messages['he'] = array(
 	'loops_max' => 'בוצע מספר מרבי של לולאות',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
