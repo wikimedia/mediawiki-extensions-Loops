@@ -179,3 +179,11 @@ $messages['pms'] = array(
 	'loops_max' => "Màssim nùmer ëd sicl ch'a son stàit fàit",
 );
 
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'loops-desc' => 'Mga tungkuling pambanghay para sa pagsasagawa ng mga pagsilo',
+	'loops_max' => 'Naisagawa na ang pinakamataas na bilang ng mga pagsilo',
+);
+
