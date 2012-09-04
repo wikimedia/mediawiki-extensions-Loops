@@ -17,7 +17,9 @@ MediaWiki 'extensions' directory. Then add the following code to your
  # Loops
  require_once( "$IP/extensions/Loops/Loops.php" );
 
- 
+You will also want to install the Variables extension to enable the functions
+'loop', 'forargs' and 'fornumargs'.
+
 == Contributing ==
 
 If you have bug reports or feature requests, please add them to the 'Loops'
