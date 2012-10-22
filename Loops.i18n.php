@@ -186,4 +186,3 @@ $messages['tl'] = array(
 	'loops-desc' => 'Mga tungkuling pambanghay para sa pagsasagawa ng mga pagsilo',
 	'loops_max' => 'Naisagawa na ang pinakamataas na bilang ng mga pagsilo',
 );
-
