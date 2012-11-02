@@ -186,3 +186,11 @@ $messages['tl'] = array(
 	'loops-desc' => 'Mga tungkuling pambanghay para sa pagsasagawa ng mga pagsilo',
 	'loops_max' => 'Naisagawa na ang pinakamataas na bilang ng mga pagsilo',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'loops-desc' => '执行循环的解析器函数',
+	'loops_max' => '循环执行次数的最大值',
+);
