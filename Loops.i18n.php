@@ -187,6 +187,14 @@ $messages['tl'] = array(
 	'loops_max' => 'Naisagawa na ang pinakamataas na bilang ng mga pagsilo',
 );
 
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'loops-desc' => 'Parser functions for performing loops',
+	'loops_max' => 'Maximum number of loops have been performed',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Yfdyh000
  */
