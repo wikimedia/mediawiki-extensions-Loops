@@ -21,9 +21,10 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Purodha
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'loops-desc' => '{{desc}}',
+	'loops-desc' => '{{desc|name=Loops|url=http://www.mediawiki.org/wiki/Extension:Loops}}',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
