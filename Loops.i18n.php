@@ -196,6 +196,14 @@ $messages['tzm'] = array(
 	'loops_max' => 'Maximum number of loops have been performed',
 );
 
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'loops-desc' => 'Функції парсеру для створення циклів',
+	'loops_max' => 'Максимальне число циклів, що може бути створено',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Yfdyh000
  */
