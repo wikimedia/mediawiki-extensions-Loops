@@ -155,6 +155,13 @@ $messages['ms'] = array(
 	'loops_max' => 'Bilangan gelung maksimum telah dilakukan',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'loops_max' => "Ġew esegwiti n-numru massimu ta' ċikli",
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
