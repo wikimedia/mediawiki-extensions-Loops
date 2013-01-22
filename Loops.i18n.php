@@ -187,6 +187,14 @@ $messages['pms'] = array(
 	'loops_max' => "Màssim nùmer ëd sicl ch'a son stàit fàit",
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'loops-desc' => 'Funziune analizzatrice pe fà le cicle',
+	'loops_max' => 'Massime numere de cicle onne state fatte',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
