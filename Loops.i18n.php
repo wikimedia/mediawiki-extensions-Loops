@@ -25,6 +25,7 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'loops-desc' => '{{desc|name=Loops|url=http://www.mediawiki.org/wiki/Extension:Loops}}',
+	'loops_max' => 'Used as error message.',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
