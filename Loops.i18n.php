@@ -188,6 +188,22 @@ $messages['pms'] = array(
 	'loops_max' => "Màssim nùmer ëd sicl ch'a son stàit fàit",
 );
 
+/** Portuguese (português)
+ * @author Cainamarques
+ */
+$messages['pt'] = array(
+	'loops-desc' => 'Funções sintáticas para executar ciclos',
+	'loops_max' => 'O número máximo de ciclos foi atingido',
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
+ */
+$messages['pt-br'] = array(
+	'loops-desc' => 'Funções sintáticas para executar ciclos',
+	'loops_max' => 'O número máximo de ciclos foi atingido',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
