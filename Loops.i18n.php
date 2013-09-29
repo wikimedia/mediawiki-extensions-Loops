@@ -212,6 +212,14 @@ $messages['roa-tara'] = array(
 	'loops_max' => 'Massime numere de cicle onne state fatte',
 );
 
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'loops-desc' => 'Функции анализатора для выполнения циклов',
+	'loops_max' => 'Максимальное количество циклов для выполнения',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
