@@ -134,9 +134,10 @@ $messages['ksh'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
-	'loops-desc' => 'Parser-Fonctioune fir Schleefen auszeféieren',
+	'loops-desc' => 'Parser-Funktioune fir Schleefen auszeféieren',
 	'loops_max' => 'Déi maximal Zuel vun erlaabte Schleefe gouf ausgefouert',
 );
 
