@@ -28,6 +28,14 @@ $messages['qqq'] = array(
 	'loops_max' => 'Used as error message.',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'loops-desc' => "Funciones d'analís pa facer xeres cícliques",
+	'loops_max' => "Algamóse'l númberu máximu de ciclos",
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
