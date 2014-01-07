@@ -68,6 +68,14 @@ $messages['es'] = array(
 	'loops_max' => 'Se ha realizado el número máximo de bucles',
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'loops-desc' => 'توابع تجزیه کننده برای انجام حلقه‌ها',
+	'loops_max' => 'حداکثر تعداد حلقه‌هایی که انجام شده‌است',
+);
+
 /** French (français)
  * @author DavidL
  */
