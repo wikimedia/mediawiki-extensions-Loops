@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": [
+            "Daniel Werner"
+        ]
+    },
+    "loops-desc": "Parser-Funktionen zur Schleifen-Ausführung",
+    "loops_max": "Die maximal erlaubte Anzahl an Schleifen wurde ausgeführt"
+}

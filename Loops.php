@@ -2,12 +2,11 @@
 
 /**
  * 'Loops' is a MediaWiki extension expanding the parser with loops functions
- * 
+ *
  * Documentation: http://www.mediawiki.org/wiki/Extension:Loops
  * Support:       http://www.mediawiki.org/wiki/Extension_talk:Loops
  * Source code:   http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Loops
- * 
- * @version: 0.4
+ *
  * @license: GNU GPL v2 or higher
  * @author:  David M. Sledge
  * @author:  Daniel Werner < danweetz@web.de >
@@ -17,7 +16,7 @@
  */
 
 if ( ! defined( 'MEDIAWIKI' ) ) { die( ); }
- 
+
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'author'         => array( 'David M. Sledge', '[http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]' ),
@@ -28,6 +27,7 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 
 // language files:
+$wgMessagesDirs['Loops'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Loops'     ] = ExtLoops::getDir() . '/Loops.i18n.php';
 $wgExtensionMessagesFiles['LoopsMagic'] = ExtLoops::getDir() . '/Loops.i18n.magic.php';
 
@@ -45,13 +45,12 @@ require_once ExtLoops::getDir() . '/Loops_Settings.php';
  * extension logic stuff.
  */
 class ExtLoops {
-		
-	const VERSION = '0.4';
-	
+	const VERSION = '0.5.0';
+
 	/**
 	 * Configuration variable defining maximum allowed number of loops ('-1' => no limit).
 	 * '#forargs' and '#fornumargs' are not limited by this.
-	 * 
+	 *
 	 * @var int
 	 */
 	public static $maxLoops = 100;
@@ -60,7 +59,7 @@ class ExtLoops {
 	 * Returns the extensions base installation directory.
 	 *
 	 * @since 0.4
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public static function getDir() {
@@ -74,11 +73,11 @@ class ExtLoops {
 
 	/**
 	* Sets up parser functions
-	* 
+	*
 	* @since 0.4
 	*/
 	public static function init( Parser &$parser ) {
-		
+
 		if( ! class_exists( 'ExtVariables' ) ) {
 			/*
 			 * If Variables extension not defined, we can't use certain functions.
@@ -88,7 +87,7 @@ class ExtLoops {
 			$disabledFunctions = array( 'loop', 'forargs', 'fornumargs' );
 			$egLoopsEnabledFunctions = array_diff( $egLoopsEnabledFunctions, $disabledFunctions );
 		}
-		
+
 		/*
 		 * store for loops count per parser object. This will solve several bugs related to
 		 * 'ParserClearState' hook resetting the count early in combination with certain
@@ -101,22 +100,22 @@ class ExtLoops {
 		self::initFunction( $parser, 'loop' );
 		self::initFunction( $parser, 'forargs' );
 		self::initFunction( $parser, 'fornumargs' );
-		
+
 		return true;
 	}
 	private static function initFunction( Parser &$parser, $name ) {
 		global $egLoopsEnabledFunctions;
-		
+
 		// don't register parser function if disabled by configuration:
 		if( ! in_array( $name, $egLoopsEnabledFunctions ) ) {
 			return;
 		}
-		
+
 		$functionCallback = array( __CLASS__, 'pfObj_' . $name );
 		$parser->setFunctionHook( $name, $functionCallback, SFH_OBJECT_ARGS );
 	}
-	
-	
+
+
 	####################
 	# Parser Functions #
 	####################
@@ -124,11 +123,11 @@ class ExtLoops {
 	public static function pfObj_while( Parser &$parser, $frame, $args ) {
 		return self::perform_while( $parser, $frame, $args, false );
 	}
-	
+
 	public static function pfObj_dowhile( Parser &$parser, $frame, $args ) {
 		return self::perform_while( $parser, $frame, $args, true );
 	}
-	
+
 	/**
 	 * Generic function handling '#while' and '#dowhile' as one
 	 */
@@ -136,7 +135,7 @@ class ExtLoops {
 		// #(do)while: | condition | code
 		$rawCond = isset( $args[1] ) ? $args[1] : ''; // unexpanded condition
 		$rawCode = isset( $args[2] ) ? $args[2] : ''; // unexpanded loop code
-		
+
 		if(
 			$dowhile === false
 			&& trim( $frame->expand( $rawCond ) ) === ''
@@ -144,70 +143,70 @@ class ExtLoops {
 			// while, but condition not fullfilled from the start
 			return '';
 		}
-		
+
 		$output = '';
-		
+
 		do {
 			// limit check:
 			if( ! self::incrCounter( $parser ) ) {
 				return self::msgLoopsLimit( $output );
 			}
 			$output .= trim( $frame->expand( $rawCode ) );
-			
+
 		} while( trim( $frame->expand( $rawCond ) ) );
-		
+
 		return $output;
 	}
-	
+
 	public static function pfObj_loop( Parser &$parser, PPFrame $frame, $args ) {
 		// #loop: var | start | count | code
 		$varName  = isset( $args[0] ) ?      trim( $frame->expand( $args[0] ) ) : '';
 		$startVal = isset( $args[1] ) ? (int)trim( $frame->expand( $args[1] ) ) : 0;
 		$loops    = isset( $args[2] ) ? (int)trim( $frame->expand( $args[2] ) ) : 0;
 		$rawCode  = isset( $args[3] ) ? $args[3] : ''; // unexpanded loop code
-		
+
 		if( $loops === 0 ) {
 			// no loops to perform
 			return '';
 		}
-				
+
 		$output = '';
 		$endVal = $startVal + $loops;
 		$i = $startVal;
-		
+
 		while( $i !== $endVal ) {
 			// limit check:
 			if( ! self::incrCounter( $parser ) ) {
 				return self::msgLoopsLimit( $output );
 			}
-			
+
 			// set current position as variable:
 			self::setVariable( $parser, $varName, (string)$i );
-			
+
 			$output .= trim( $frame->expand( $rawCode ) );
-			
+
 			// in-/decrease loop count (count can be negative):
 			( $i < $endVal ) ? $i++ : $i--;
 		}
 		return $output;
 	}
-	
+
 	/**
 	 * #forargs: filter | keyVarName | valVarName | code
 	 */
-	public static function pfObj_forargs( Parser &$parser, $frame, $args ) {		
+	public static function pfObj_forargs( Parser &$parser, $frame, $args ) {
 		// The first arg is already expanded, but this is a good habit to have...
 		$filter = array_shift( $args );
 		$filter = $filter !== null ? trim( $frame->expand( $filter ) ) : '';
-		
+
 		// if prefix contains numbers only or isn't set, get all arguments, otherwise just non-numeric
 		$tArgs = ( preg_match( '/^([1-9][0-9]*)?$/', $filter ) > 0 )
 				? $frame->getArguments()
 				: $frame->getNamedArguments();
-		
+
 		return self::perform_forargs( $parser, $frame, $args, $tArgs, $filter );
 	}
-	
+
 	/**
 	 * #fornumargs: keyVarName | valVarName | code
 	 * or (since 0.4 for more consistency)
@@ -226,16 +225,16 @@ class ExtLoops {
 			}
 		}
 		ksort( $tNumArgs ); // sort from lowest to highest
-		
+
 		if( count( $args ) > 3 ) {
 			// compatbility to pre 0.4 but consistency with other Loop functions.
 			// this way the first argument can be ommitted like '#fornumargs: |varKey |varVal |code'
 			array_shift( $args );
 		}
-		
+
 		return self::perform_forargs( $parser, $frame, $args, $tNumArgs, '' );
 	}
-	
+
 	/**
 	 * Generic function handling '#forargs' and '#fornumargs' as one
 	 */
@@ -244,7 +243,7 @@ class ExtLoops {
 		if( !( $frame->isTemplate() ) ) {
 			return '';
 		}
-		
+
 		// name of the variable to store the argument name:
 		$keyVar  = array_shift( $funcArgs );
 		$keyVar  = $keyVar  !== null ? trim( $frame->expand( $keyVar ) )  : '';
@@ -254,16 +253,16 @@ class ExtLoops {
 		// unexpanded code:
 		$rawCode = array_shift( $funcArgs );
 		$rawCode = $rawCode !== null ? $rawCode : '';
-				
+
 		$output = '';
-		
+
 		// if prefix contains numbers only or isn't set, get all arguments, otherwise just non-numeric
 		$tArgs = preg_match( '/^([1-9][0-9]*)?$/', $prefix ) > 0
 				? $frame->getArguments() : $frame->getNamedArguments();
-		
+
 		foreach( $templateArgs as $argName => $argVal ) {
 			// if no filter or prefix in argument name:
-			if( $prefix !== '' && strpos( $argName, $prefix ) !== 0 ) {		
+			if( $prefix !== '' && strpos( $argName, $prefix ) !== 0 ) {
 				continue;
 			}
 			if ( $keyVar !== $valVar ) {
@@ -274,29 +273,29 @@ class ExtLoops {
 			self::setVariable( $parser, $valVar, $argVal );
 
 			// expand current run:
-			$output .= trim( $frame->expand( $rawCode ) );			
+			$output .= trim( $frame->expand( $rawCode ) );
 		}
-		
+
 		return $output;
 	}
-	
+
 	/**
 	 * Connects to 'Variables' extension and sets a variable. Handles different versions of
 	 * 'Variables' extension since there have changed some things along the way.
-	 * 
+	 *
 	 * @param Parser $parser
 	 * @param string $varName
 	 * @param string $varValue
 	 */
 	private static function setVariable( Parser &$parser, $varName, $varValue ) {
 		global $wgExtVariables;
-		
+
 		static $newVersion = null;
 		if( $newVersion === null ) {
 			// find out whether local wiki is using variables extension 2.0 or higher
 			$newVersion = ( defined( 'ExtVariables::VERSION' ) && version_compare( ExtVariables::VERSION, '1.9999', '>' ) );
 		}
-		
+
 		if( $newVersion ) {
 			// clean way since Variables 2.0:
 			ExtVariables::get( $parser )->setVarValue( $varName, $varValue );
@@ -306,42 +305,42 @@ class ExtLoops {
 			$wgExtVariables->vardefine( $parser, trim( $varName ), trim( $varValue ) );
 		}
 	}
-	
-	
+
+
 	###############
 	# Loops Count #
 	###############
-	
+
 	/**
 	 * Returns how many loops have been performed for a given Parser instance.
-	 * 
+	 *
 	 * @since 0.4
-	 * 
+	 *
 	 * @param Parser $parser
 	 * @return int
 	 */
 	public static function getLoopsCount( Parser &$parser ) {
 		return $parser->mExtLoopsCounter;
 	}
-	
+
 	/**
 	 * Returns whether the maximum number of loops for the given Parser instance have
 	 * been performed already.
-	 * 
+	 *
 	 * @since 0.4
-	 * 
+	 *
 	 * @param Parser $parser
-	 * @return bool 
+	 * @return bool
 	 */
 	public static function maxLoopsPerformed( Parser &$parser ) {
 		$count = $parser->mExtLoopsCounter;
 		return $count > -1 && $count >= self::$maxLoops;
 	}
-	
+
 	/**
 	 * If limit has not been exceeded already, this will increase the counter. If
 	 * exceeded false will be returned, otherwise the new counter value
-	 * 
+	 *
 	 * @return false|int
 	 */
 	protected static function incrCounter( Parser &$parser ) {
@@ -350,7 +349,7 @@ class ExtLoops {
 		}
 		return ++$parser->mExtLoopsCounter;
 	}
-	
+
 	/**
 	 * div wrapped error message stating maximum number of loops have been performed.
 	 */
@@ -360,29 +359,29 @@ class ExtLoops {
 		}
 		return $output .= '<div class="error">' . wfMsgForContent( 'loops_max' ) . '</div>';
 	}
-	
-	
+
+
 	##################
 	# Hooks handling #
 	##################
-	
+
 	public static function onParserClearState( Parser &$parser ) {
 		// reset loops counter since the parser process finished one page
 		$parser->mExtLoopsCounter = 0;
 		return true;
 	}
-	
+
 	public static function onParserLimitReport( $parser, &$report ) {
 		// add performed loops to limit report:
 		$report .= 'ExtLoops count: ' . self::getLoopsCount( $parser );
-		
+
 		if( self::$maxLoops > -1 ) {
 			// if limit is set, communicate the limit as well:
 			$report .= '/' . self::$maxLoops;
 		}
 		$report .= "\n";
-		
+
 		return true;
 	}
-	
+
 }
