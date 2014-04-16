@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Michawiki"
-        ]
-    },
-    "loops-desc": "Parserowe funkcije za wuwjedźenje seklow",
-    "loops_max": "Maksimalna ličba seklow je so wuwjedła"
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"loops-desc": "Parserowe funkcije za wuwjedźenje seklow",
+	"loops_max": "Maksimalna ličba seklow je so wuwjedła"
 }

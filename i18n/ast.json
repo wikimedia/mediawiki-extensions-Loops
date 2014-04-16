@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xuacu"
-        ]
-    },
-    "loops-desc": "Funciones d'analís pa facer xeres cícliques",
-    "loops_max": "Algamóse'l númberu máximu de ciclos"
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"loops-desc": "Funciones d'analís pa facer xeres cícliques",
+	"loops_max": "Algamóse'l númberu máximu de ciclos"
 }
