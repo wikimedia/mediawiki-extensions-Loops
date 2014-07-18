@@ -333,8 +333,7 @@ class ExtLoops {
 	 * @return bool
 	 */
 	public static function maxLoopsPerformed( Parser &$parser ) {
-		$count = $parser->mExtLoopsCounter;
-		return $count > -1 && $count >= self::$maxLoops;
+		return self::$maxLoops > -1 && $parser->mExtLoopsCounter >= self::$maxLoops;
 	}
 
 	/**
