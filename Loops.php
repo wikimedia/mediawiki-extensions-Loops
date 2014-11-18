@@ -112,7 +112,7 @@ class ExtLoops {
 		}
 
 		$functionCallback = array( __CLASS__, 'pfObj_' . $name );
-		$parser->setFunctionHook( $name, $functionCallback, SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( $name, $functionCallback, Parser::SFH_OBJECT_ARGS );
 	}
 
 
