@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Purodha",
-			"Shirayuki"
+			"Shirayuki",
+			"Umherirrender"
 		]
 	},
-	"loops-desc": "{{desc|name=Loops|url=http://www.mediawiki.org/wiki/Extension:Loops}}",
+	"loops-desc": "{{desc|name=Loops|url=https://www.mediawiki.org/wiki/Extension:Loops}}",
 	"loops_max": "Used as error message."
 }
