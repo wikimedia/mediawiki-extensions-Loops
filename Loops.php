@@ -357,7 +357,7 @@ class ExtLoops {
 		if( trim( $output ) !== '' ) {
 			$output .= "\n";
 		}
-		return $output .= '<div class="error">' . wfMsgForContent( 'loops_max' ) . '</div>';
+		return $output .= '<div class="error">' . wfMessage( 'loops_max' )->inContentLanguage()->escape() . '</div>';
 	}
 
 
