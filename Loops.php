@@ -29,7 +29,6 @@ $wgExtensionCredits['parserhook'][] = array(
 
 // language files:
 $wgMessagesDirs['Loops'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['Loops'     ] = ExtLoops::getDir() . '/Loops.i18n.php';
 $wgExtensionMessagesFiles['LoopsMagic'] = ExtLoops::getDir() . '/Loops.i18n.magic.php';
 
 // hooks registration:
@@ -46,7 +45,7 @@ require_once ExtLoops::getDir() . '/Loops_Settings.php';
  * extension logic stuff.
  */
 class ExtLoops {
-	const VERSION = '0.5.0';
+	const VERSION = '0.5.1';
 
 	/**
 	 * Configuration variable defining maximum allowed number of loops ('-1' => no limit).
@@ -117,10 +116,9 @@ class ExtLoops {
 	}
 
 
-	####################
-	# Parser Functions #
-	####################
-
+	/**
+	 * Parser functions
+	 */
 	public static function pfObj_while( Parser &$parser, $frame, $args ) {
 		return self::perform_while( $parser, $frame, $args, false );
 	}
@@ -214,7 +212,7 @@ class ExtLoops {
 	 * #fornumargs: | keyVarName | valVarName | code
 	 */
 	public static function pfObj_fornumargs( Parser &$parser, $frame, $args ) {
-		/*
+		/**
 		 * get numeric arguments, don't use PPFrame::getNumberedArguments because it would
 		 * return explicitely numbered arguments only.
 		 */
@@ -228,8 +226,10 @@ class ExtLoops {
 		ksort( $tNumArgs ); // sort from lowest to highest
 
 		if( count( $args ) > 3 ) {
-			// compatbility to pre 0.4 but consistency with other Loop functions.
-			// this way the first argument can be ommitted like '#fornumargs: |varKey |varVal |code'
+			/**
+			 *compatbility to pre 0.4 but consistency with other Loop functions.
+			 * this way the first argument can be ommitted like '#fornumargs: |varKey |varVal |code'
+			 */
 			array_shift( $args );
 		}
 
@@ -308,9 +308,9 @@ class ExtLoops {
 	}
 
 
-	###############
-	# Loops Count #
-	###############
+	/**
+	 * Loops count
+	 */
 
 	/**
 	 * Returns how many loops have been performed for a given Parser instance.
@@ -357,13 +357,13 @@ class ExtLoops {
 		if( trim( $output ) !== '' ) {
 			$output .= "\n";
 		}
-		return $output .= '<div class="error">' . wfMessage( 'loops_max' )->inContentLanguage()->escape() . '</div>';
+		return $output .= '<div class="error">' . wfMessage( 'loops_max' )->inContentLanguage()->escaped() . '</div>';
 	}
 
 
-	##################
-	# Hooks handling #
-	##################
+	/**
+	 * Hooks handling
+	 */
 
 	public static function onParserClearState( Parser &$parser ) {
 		// reset loops counter since the parser process finished one page
