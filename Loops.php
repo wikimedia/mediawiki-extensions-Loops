@@ -24,7 +24,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version'        => ExtLoops::VERSION,
 	'descriptionmsg' => 'loops-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Loops',
-	'license-name'   => 'GPL-2.0+',
+	'license-name'   => 'GPL-2.0-or-later',
 );
 
 // language files:
