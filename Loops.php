@@ -5,7 +5,7 @@
  *
  * Documentation: http://www.mediawiki.org/wiki/Extension:Loops
  * Support:       http://www.mediawiki.org/wiki/Extension_talk:Loops
- * Source code:   http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Loops
+ * Source code:   https://gerrit.wikimedia.org/r/#/admin/projects/mediawiki/extensions/Loops
  *
  * @license: GNU GPL v2 or higher
  * @author:  David M. Sledge
