@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"David M. Sledge"
+			"David M. Sledge",
+			"MGChecker"
 		]
 	},
 	"loops-desc": "Parser functions for performing loops",
-	"loops_max": "Maximum number of loops have been performed"
+	"loops_max": "Maximum number of loops have been performed",
+	"loops-limitreport-count-limited": "ExtLoops count",
+	"loops-limitreport-count-limited-value": "$1/$2",
+	"loops-limitreport-count-unlimited": "ExtLoops count",
+	"loops-limitreport-count-unlimited-value": "$1"
 }

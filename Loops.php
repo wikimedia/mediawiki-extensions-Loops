@@ -33,8 +33,8 @@ $wgExtensionMessagesFiles['LoopsMagic'] = ExtLoops::getDir() . '/Loops.i18n.magi
 
 // hooks registration:
 $wgHooks['ParserFirstCallInit'][] = 'ExtLoops::init';
-$wgHooks['ParserLimitReport'  ][] = 'ExtLoops::onParserLimitReport';
-$wgHooks['ParserClearState'   ][] = 'ExtLoops::onParserClearState';
+$wgHooks['ParserLimitReportPrepare'][] = 'ExtLoops::onParserLimitReportPrepare';
+$wgHooks['ParserClearState'][] = 'ExtLoops::onParserClearState';
 
 // Include the settings file:
 require_once ExtLoops::getDir() . '/Loops_Settings.php';
@@ -100,8 +100,6 @@ class ExtLoops {
 		self::initFunction( $parser, 'loop' );
 		self::initFunction( $parser, 'forargs' );
 		self::initFunction( $parser, 'fornumargs' );
-
-		return true;
 	}
 	private static function initFunction( Parser &$parser, $name ) {
 		global $egLoopsEnabledFunctions;
@@ -368,20 +366,21 @@ class ExtLoops {
 	public static function onParserClearState( Parser &$parser ) {
 		// reset loops counter since the parser process finished one page
 		$parser->mExtLoopsCounter = 0;
-		return true;
 	}
 
-	public static function onParserLimitReport( $parser, &$report ) {
-		// add performed loops to limit report:
-		$report .= 'ExtLoops count: ' . self::getLoopsCount( $parser );
-
-		if( self::$maxLoops > -1 ) {
-			// if limit is set, communicate the limit as well:
-			$report .= '/' . self::$maxLoops;
+	public static function onParserLimitReportPrepare( $parser, $output ) {
+		global $egLoopsCounterLimit;
+		if ( $egLoopsCounterLimit > -1 ) {
+			$output->setLimitReportData(
+				'loops-limitreport-count-limited',
+				[ self::getLoopsCount( $parser ), $egLoopsCounterLimit ]
+			);
+		} else {
+			$output->setLimitReportData(
+				'loops-limitreport-count-unlimited',
+				[ self::getLoopsCount( $parser ) ]
+			);
 		}
-		$report .= "\n";
-
-		return true;
 	}
 
 }
