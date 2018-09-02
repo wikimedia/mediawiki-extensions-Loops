@@ -36,8 +36,6 @@ class ExtLoops {
 		self::initFunction( $parser, 'loop' );
 		self::initFunction( $parser, 'forargs' );
 		self::initFunction( $parser, 'fornumargs' );
-
-		return true;
 	}
 	private static function initFunction( Parser &$parser, $name ) {
 		global $egLoopsEnabledFunctions;
@@ -305,21 +303,21 @@ class ExtLoops {
 	public static function onParserClearState( Parser &$parser ) {
 		// reset loops counter since the parser process finished one page
 		$parser->mExtLoopsCounter = 0;
-		return true;
 	}
 
-	public static function onParserLimitReport( $parser, &$report ) {
+	public static function onParserLimitReportPrepare( $parser, $output ) {
 		global $egLoopsCounterLimit;
-		// add performed loops to limit report:
-		$report .= 'ExtLoops count: ' . self::getLoopsCount( $parser );
-
 		if ( $egLoopsCounterLimit > -1 ) {
-			// if limit is set, communicate the limit as well:
-			$report .= '/' . $egLoopsCounterLimit;
+			$output->setLimitReportData(
+				'loops-limitreport-count-limited',
+				[ self::getLoopsCount( $parser ), $egLoopsCounterLimit ]
+			);
+		} else {
+			$output->setLimitReportData(
+				'loops-limitreport-count-unlimited',
+				[ self::getLoopsCount( $parser ) ]
+			);
 		}
-		$report .= "\n";
-
-		return true;
 	}
 
 }

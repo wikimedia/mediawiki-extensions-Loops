@@ -33,8 +33,8 @@ $wgExtensionMessagesFiles['LoopsMagic'] = __DIR__  . '/Loops.i18n.magic.php';
 
 // hooks registration:
 $wgHooks['ParserFirstCallInit'][] = 'ExtLoops::init';
-$wgHooks['ParserLimitReport'  ][] = 'ExtLoops::onParserLimitReport';
-$wgHooks['ParserClearState'   ][] = 'ExtLoops::onParserClearState';
+$wgHooks['ParserLimitReportPrepare'][] = 'ExtLoops::onParserLimitReportPrepare';
+$wgHooks['ParserClearState'][] = 'ExtLoops::onParserClearState';
 
 // Include settings file and ExtLoops class:
 $wgAutoloadClasses['ExtLoops'] = __DIR__ . '/ExtLoops.php';
