@@ -8,14 +8,6 @@ class ExtLoops {
 	const VERSION = '1.0.0-beta';
 
 	/**
-	 * Configuration variable defining maximum allowed number of loops ('-1' => no limit).
-	 * '#forargs' and '#fornumargs' are not limited by this.
-	 *
-	 * @var int
-	 */
-	public static $maxLoops = 100;
-
-	/**
 	* Sets up parser functions
 	*
 	* @since 0.4
@@ -278,7 +270,8 @@ class ExtLoops {
 	 * @return bool
 	 */
 	public static function maxLoopsPerformed( Parser &$parser ) {
-		return self::$maxLoops > -1 && $parser->mExtLoopsCounter >= self::$maxLoops;
+		global $egLoopsCounterLimit;
+		return $egLoopsCounterLimit > -1 && $parser->mExtLoopsCounter >= $egLoopsCounterLimit;
 	}
 
 	/**
@@ -316,12 +309,13 @@ class ExtLoops {
 	}
 
 	public static function onParserLimitReport( $parser, &$report ) {
+		global $egLoopsCounterLimit;
 		// add performed loops to limit report:
 		$report .= 'ExtLoops count: ' . self::getLoopsCount( $parser );
 
-		if( self::$maxLoops > -1 ) {
+		if ( $egLoopsCounterLimit > -1 ) {
 			// if limit is set, communicate the limit as well:
-			$report .= '/' . self::$maxLoops;
+			$report .= '/' . $egLoopsCounterLimit;
 		}
 		$report .= "\n";
 

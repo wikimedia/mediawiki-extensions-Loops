@@ -29,3 +29,12 @@
  * @var array
  */
 $egLoopsEnabledFunctions = array( 'while', 'dowhile', 'loop', 'forargs', 'fornumargs' );
+
+/**
+ * Configuration variable defining maximum allowed number of loops ('-1' => no limit).
+ * '#forargs' and '#fornumargs' are not limited by this.
+ *
+ * @since 1.0
+ * @var int
+ */
+$egLoopsCounterLimit = 100;
