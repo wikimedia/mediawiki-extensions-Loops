@@ -29,7 +29,7 @@ $wgExtensionCredits['parserhook'][] = array(
 
 // language files:
 $wgMessagesDirs['Loops'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['LoopsMagic'] = ExtLoops::getDir() . '/Loops.i18n.magic.php';
+$wgExtensionMessagesFiles['LoopsMagic'] = __DIR__  . '/Loops.i18n.magic.php';
 
 // hooks registration:
 $wgHooks['ParserFirstCallInit'][] = 'ExtLoops::init';
@@ -37,7 +37,7 @@ $wgHooks['ParserLimitReport'  ][] = 'ExtLoops::onParserLimitReport';
 $wgHooks['ParserClearState'   ][] = 'ExtLoops::onParserClearState';
 
 // Include the settings file:
-require_once ExtLoops::getDir() . '/Loops_Settings.php';
+require_once __DIR__  . '/Loops_Settings.php';
 
 
 /**
@@ -45,7 +45,7 @@ require_once ExtLoops::getDir() . '/Loops_Settings.php';
  * extension logic stuff.
  */
 class ExtLoops {
-	const VERSION = '0.5.1';
+	const VERSION = '1.0.0-beta';
 
 	/**
 	 * Configuration variable defining maximum allowed number of loops ('-1' => no limit).
@@ -54,22 +54,6 @@ class ExtLoops {
 	 * @var int
 	 */
 	public static $maxLoops = 100;
-
-	/**
-	 * Returns the extensions base installation directory.
-	 *
-	 * @since 0.4
-	 *
-	 * @return boolean
-	 */
-	public static function getDir() {
-		static $dir = null;
-
-		if( $dir === null ) {
-			$dir = dirname( __FILE__ );
-		}
-		return $dir;
-	}
 
 	/**
 	* Sets up parser functions
