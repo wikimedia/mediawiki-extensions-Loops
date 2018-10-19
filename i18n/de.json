@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Daniel Werner",
-			"Kghbln"
+			"Kghbln",
+			"Metalhead64"
 		]
 	},
 	"loops-desc": "Ergänzt den Parser um Funktionen zur Ausführung von Schleifen",
-	"loops_max": "Die maximal zulässige Anzahl an Schleifen wurde ausgeführt"
+	"loops_max": "Die maximal zulässige Anzahl an Schleifen wurde ausgeführt",
+	"loops-limitreport-count-limited": "ExtLoops-Anzahl",
+	"loops-limitreport-count-unlimited": "ExtLoops-Anzahl"
 }

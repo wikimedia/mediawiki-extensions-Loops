@@ -5,5 +5,7 @@
 		]
 	},
 	"loops-desc": "執行循環的解析函式",
-	"loops_max": "已執行到最大循環數目"
+	"loops_max": "已執行到最大循環數目",
+	"loops-limitreport-count-limited": "ExtLoops 總數",
+	"loops-limitreport-count-unlimited": "ExtLoops 總數"
 }

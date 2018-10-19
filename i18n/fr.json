@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"DavidL"
+			"DavidL",
+			"Gomoko"
 		]
 	},
 	"loops-desc": "Fonctions de l'interpréteur pour effectuer des boucles",
-	"loops_max": "Le nombre maximal de boucles a été effectué"
+	"loops_max": "Le nombre maximal de boucles a été effectué",
+	"loops-limitreport-count-limited": "Compteur ExtLoops",
+	"loops-limitreport-count-unlimited": "Compteur ExtLoops"
 }
