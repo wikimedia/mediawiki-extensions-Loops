@@ -5,5 +5,7 @@
 		]
 	},
 	"loops-desc": "وظائف محلل لإجراء الحلقات",
-	"loops_max": "تم تنفيذ الحد الأقصى لعدد الحلقات"
+	"loops_max": "تم تنفيذ الحد الأقصى لعدد الحلقات",
+	"loops-limitreport-count-limited": "عد ExtLoops",
+	"loops-limitreport-count-unlimited": "عد ExtLoops"
 }

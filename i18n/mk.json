@@ -4,6 +4,8 @@
 			"Bjankuloski06"
 		]
 	},
-	"loops-desc": "Rасчленувачки функции за вршење на повторувања (јамки)",
-	"loops_max": "Извршен е најголемиот допуштен број на повторувања"
+	"loops-desc": "Расчленувачки функции за вршење на повторувања (јамки)",
+	"loops_max": "Извршен е најголемиот допуштен број на повторувања",
+	"loops-limitreport-count-limited": "Број на ExtLoops",
+	"loops-limitreport-count-unlimited": "Број на ExtLoops"
 }
