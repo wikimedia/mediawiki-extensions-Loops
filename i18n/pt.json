@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cainamarques"
+			"Cainamarques",
+			"Hamilton Abreu"
 		]
 	},
 	"loops-desc": "Funções sintáticas para executar ciclos",
-	"loops_max": "O número máximo de ciclos foi atingido"
+	"loops_max": "O número máximo de ciclos foi atingido",
+	"loops-limitreport-count-limited": "Contagem ExtLoops",
+	"loops-limitreport-count-unlimited": "Contagem ExtLoops"
 }
