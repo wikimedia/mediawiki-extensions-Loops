@@ -45,7 +45,7 @@ require_once ExtLoops::getDir() . '/Loops_Settings.php';
  * extension logic stuff.
  */
 class ExtLoops {
-	const VERSION = '0.5.1';
+	const VERSION = '0.5.2';
 
 	/**
 	 * Configuration variable defining maximum allowed number of loops ('-1' => no limit).
