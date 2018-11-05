@@ -5,5 +5,7 @@
 		]
 	},
 	"loops-desc": "Funziune analizzatrice pe fà le cicle",
-	"loops_max": "Massime numere de cicle onne state fatte"
+	"loops_max": "Massime numere de cicle onne state fatte",
+	"loops-limitreport-count-limited": "Condegge de ExtLoops",
+	"loops-limitreport-count-unlimited": "Condegge de ExtLoops"
 }
