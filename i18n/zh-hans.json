@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yfdyh000"
+			"Yfdyh000",
+			"D41D8CD98F"
 		]
 	},
 	"loops-desc": "执行循环的解析器函数",
-	"loops_max": "循环执行次数的最大值"
+	"loops_max": "已达到最大循环执行次数"
 }
