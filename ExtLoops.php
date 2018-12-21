@@ -14,14 +14,28 @@ class ExtLoops {
 	*/
 	public static function init( Parser &$parser ) {
 
-		if( ! class_exists( 'ExtVariables' ) ) {
+		/*
+		 * Some functions in this extension require Variables 2.x to work properly.
+		 * This function can be used to make sure Variables 2.x is installed.
+		 * However, because of the limitations of Extension.json, this will only work
+		 * if we can use Variables 2.3+
+		 * TODO: When bumping required MediaWiki version to 1.32, use
+		 * ExtensionRegistry::isLoaded( 'Variables', '>= 2.3' ) instead.
+		 */
+		$varVersion = ExtensionRegistry::getInstance()->getAllThings()['Variables']['version'] ?? null;
+		if ( $varVersion === null || !version_compare( self::$varVersion, '2.3', '>=' ) ) {
 			/*
-			 * If Variables extension not defined, we can't use certain functions.
+			 * If Variables 2.3+ is not installed, we can't use certain functions.
 			 * Make sure they are disabled:
 			 */
 			global $egLoopsEnabledFunctions;
 			$disabledFunctions = array( 'loop', 'forargs', 'fornumargs' );
 			$egLoopsEnabledFunctions = array_diff( $egLoopsEnabledFunctions, $disabledFunctions );
+		} elseif ( class_exists( 'ExtVariables' ) ) {
+			wfLogWarning(
+				'You are using a version of the Variables extension below 2.3.' .
+				'Please use version 2.3+ to use features of the Loops extension requiring Variables.'
+			);
 		}
 
 		/*
@@ -215,32 +229,16 @@ class ExtLoops {
 	}
 
 	/**
-	 * Connects to 'Variables' extension and sets a variable. Handles different versions of
-	 * 'Variables' extension since there have changed some things along the way.
+	 * Connects to 'Variables' extension and sets a variable.
+	 * There shouldn't be any parser functions accessing this if variablesIsLoaded() is false.
 	 *
 	 * @param Parser $parser
 	 * @param string $varName
 	 * @param string $varValue
 	 */
 	private static function setVariable( Parser &$parser, $varName, $varValue ) {
-		global $wgExtVariables;
-
-		static $newVersion = null;
-		if( $newVersion === null ) {
-			// find out whether local wiki is using variables extension 2.0 or higher
-			$newVersion = ( defined( 'ExtVariables::VERSION' ) && version_compare( ExtVariables::VERSION, '1.9999', '>' ) );
-		}
-
-		if( $newVersion ) {
-			// clean way since Variables 2.0:
-			ExtVariables::get( $parser )->setVarValue( $varName, $varValue );
-		}
-		else {
-			// make sure to trim values and convert them to string since old versions of Variables extension won't do this.
-			$wgExtVariables->vardefine( $parser, trim( $varName ), trim( $varValue ) );
-		}
+		ExtVariables::get( $parser )->setVarValue( $varName, $varValue );
 	}
-
 
 	/**
 	 * Loops count
