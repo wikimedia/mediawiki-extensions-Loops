@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Base"
+			"Base",
+			"Piramidion"
 		]
 	},
 	"loops-desc": "Функції парсеру для створення циклів",
-	"loops_max": "Максимальне число циклів, що може бути створено"
+	"loops_max": "Максимальне число циклів, що може бути створено",
+	"loops-limitreport-count-limited": "Підрахунок ExtLoops",
+	"loops-limitreport-count-unlimited": "Підрахунок ExtLoops"
 }
