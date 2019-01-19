@@ -20,15 +20,15 @@
  * Allows to define which functionalities provided by 'Loops' should be enabled for the wiki.
  * If extension 'Variables' is not installed, '#loop', '#forargs' and '#fornumargs' will be
  * disabled automatically.
- * 
+ *
  * @example
  * # enable '#while' and '#dowhile' parser functions only:
  * egLoopsEnabledFunctions = array( 'while', 'dowhile' );
- * 
+ *
  * @since 0.4
  * @var array
  */
-$egLoopsEnabledFunctions = array( 'while', 'dowhile', 'loop', 'forargs', 'fornumargs' );
+$egLoopsEnabledFunctions = [ 'while', 'dowhile', 'loop', 'forargs', 'fornumargs' ];
 
 /**
  * Configuration variable defining maximum allowed number of loops ('-1' => no limit).

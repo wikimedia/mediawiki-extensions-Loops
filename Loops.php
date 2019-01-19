@@ -15,21 +15,26 @@
  * @ingroup Loops
  */
 
-if ( ! defined( 'MEDIAWIKI' ) ) { die( ); }
+if ( ! defined( 'MEDIAWIKI' ) ) {
+	die();
+}
 
-$wgExtensionCredits['parserhook'][] = array(
+$wgExtensionCredits['parserhook'][] = [
 	'path'           => __FILE__,
-	'author'         => array( 'David M. Sledge', '[http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]' ),
+	'author'         => [
+		'David M. Sledge',
+		'[http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]'
+	],
 	'name'           => 'Loops',
 	'version'        => '1.0.0-beta',
 	'descriptionmsg' => 'loops-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Loops',
 	'license-name'   => 'GPL-2.0-or-later',
-);
+];
 
 // language files:
 $wgMessagesDirs['Loops'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['LoopsMagic'] = __DIR__  . '/Loops.i18n.magic.php';
+$wgExtensionMessagesFiles['LoopsMagic'] = __DIR__ . '/Loops.i18n.magic.php';
 
 // hooks registration:
 $wgHooks['ParserFirstCallInit'][] = 'ExtLoops::init';
@@ -38,4 +43,4 @@ $wgHooks['ParserClearState'][] = 'ExtLoops::onParserClearState';
 
 // Include settings file and ExtLoops class:
 $wgAutoloadClasses['ExtLoops'] = __DIR__ . '/ExtLoops.php';
-require_once __DIR__  . '/Loops_Settings.php';
+require_once __DIR__ . '/Loops_Settings.php';
