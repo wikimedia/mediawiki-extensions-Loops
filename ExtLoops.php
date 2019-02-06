@@ -105,7 +105,7 @@ class ExtLoops {
 
 		do {
 			// limit check:
-			if ( ! self::incrCounter( $parser ) ) {
+			if ( !self::incrCounter( $parser ) ) {
 				return self::msgLoopsLimit( $output );
 			}
 			$output .= trim( $frame->expand( $rawCode ) );
@@ -134,7 +134,7 @@ class ExtLoops {
 
 		while ( $i !== $endVal ) {
 			// limit check:
-			if ( ! self::incrCounter( $parser ) ) {
+			if ( !self::incrCounter( $parser ) ) {
 				return self::msgLoopsLimit( $output );
 			}
 

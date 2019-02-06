@@ -15,7 +15,7 @@
  * @ingroup Loops
  */
 
-if ( ! defined( 'MEDIAWIKI' ) ) {
+if ( !defined( 'MEDIAWIKI' ) ) {
 	die();
 }
 
