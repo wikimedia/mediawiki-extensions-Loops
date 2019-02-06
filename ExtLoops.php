@@ -18,11 +18,12 @@ class ExtLoops {
 		 * This function can be used to make sure Variables 2.x is installed.
 		 * However, because of the limitations of Extension.json, this will only work
 		 * if we can use Variables 2.3+
-		 * TODO: When bumping required MediaWiki version to 1.32, use
+		 *
+		 * TODO: When bumping required MediaWiki version to 1.32 (constraint added in 1.32), use
 		 * ExtensionRegistry::isLoaded( 'Variables', '>= 2.3' ) instead.
 		 */
 		$varVersion = ExtensionRegistry::getInstance()->getAllThings()['Variables']['version'] ?? null;
-		if ( $varVersion === null || !version_compare( self::$varVersion, '2.3', '>=' ) ) {
+		if ( $varVersion === null || !version_compare( $varVersion, '2.3', '>=' ) ) {
 			/*
 			 * If Variables 2.3+ is not installed, we can't use certain functions.
 			 * Make sure they are disabled:
@@ -30,9 +31,12 @@ class ExtLoops {
 			global $egLoopsEnabledFunctions;
 			$disabledFunctions = [ 'loop', 'forargs', 'fornumargs' ];
 			$egLoopsEnabledFunctions = array_diff( $egLoopsEnabledFunctions, $disabledFunctions );
-		} elseif ( class_exists( 'ExtVariables' ) ) {
+		} elseif (
+			class_exists( 'ExtVariables' ) &&
+			!version_compare( ExtVariables::VERSION, '2.3', '>=' )
+		) {
 			wfLogWarning(
-				'You are using a version of the Variables extension below 2.3.' .
+				'You are using a version of the Variables extension below 2.3. ' .
 				'Please use version 2.3+ to use features of the Loops extension requiring Variables.'
 			);
 		}
@@ -50,11 +54,12 @@ class ExtLoops {
 		self::initFunction( $parser, 'forargs' );
 		self::initFunction( $parser, 'fornumargs' );
 	}
+
 	private static function initFunction( Parser $parser, $name ) {
 		global $egLoopsEnabledFunctions;
 
 		// don't register parser function if disabled by configuration:
-		if ( ! in_array( $name, $egLoopsEnabledFunctions ) ) {
+		if ( !in_array( $name, $egLoopsEnabledFunctions ) ) {
 			return;
 		}
 
