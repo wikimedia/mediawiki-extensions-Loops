@@ -2,7 +2,7 @@
 
 /**
  * File defining the settings for the 'Loops' extension.
- * More info can be found at http://www.mediawiki.org/wiki/Extension:Loops#Configuration
+ * More info can be found at https://www.mediawiki.org/wiki/Extension:Loops#Configuration
  *
  * NOTICE:
  * =======

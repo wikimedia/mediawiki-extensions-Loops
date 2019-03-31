@@ -3,8 +3,8 @@
 /**
  * 'Loops' is a MediaWiki extension expanding the parser with loops functions
  *
- * Documentation: http://www.mediawiki.org/wiki/Extension:Loops
- * Support:       http://www.mediawiki.org/wiki/Extension_talk:Loops
+ * Documentation: https://www.mediawiki.org/wiki/Extension:Loops
+ * Support:       https://www.mediawiki.org/wiki/Extension_talk:Loops
  * Source code:   https://gerrit.wikimedia.org/r/#/admin/projects/mediawiki/extensions/Loops
  *
  * @license: GNU GPL v2 or higher
@@ -23,7 +23,7 @@ $wgExtensionCredits['parserhook'][] = [
 	'path'           => __FILE__,
 	'author'         => [
 		'David M. Sledge',
-		'[http://www.mediawiki.org/wiki/User:Danwe Daniel Werner]'
+		'[https://www.mediawiki.org/wiki/User:Danwe Daniel Werner]'
 	],
 	'name'           => 'Loops',
 	'version'        => '1.0.0-beta',
