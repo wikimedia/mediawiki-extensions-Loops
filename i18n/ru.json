@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras",
-			"Facenapalm"
+			"Facenapalm",
+			"Okras"
 		]
 	},
 	"loops-desc": "Функции анализатора для выполнения циклов",
