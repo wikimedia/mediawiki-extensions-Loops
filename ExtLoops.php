@@ -324,8 +324,8 @@ class ExtLoops {
 	 * @return bool
 	 */
 	public static function maxLoopsPerformed( Parser $parser ) {
-		global $egLoopsCounterLimit;
-		return $egLoopsCounterLimit > -1 && $parser->mExtLoopsCounter >= $egLoopsCounterLimit;
+		global $egLoopsCountLimit;
+		return (int)$egLoopsCountLimit > -1 && $parser->mExtLoopsCounter >= (int)$egLoopsCountLimit;
 	}
 
 	/**
