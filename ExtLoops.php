@@ -371,11 +371,11 @@ class ExtLoops {
 	 * @param ParserOutput $output
 	 */
 	public static function onParserLimitReportPrepare( $parser, $output ) {
-		global $egLoopsCounterLimit;
-		if ( $egLoopsCounterLimit > -1 ) {
+		global $egLoopsCountLimit;
+		if ( $egLoopsCountLimit > -1 ) {
 			$output->setLimitReportData(
 				'loops-limitreport-count-limited',
-				[ self::getLoopsCount( $parser ), $egLoopsCounterLimit ]
+				[ self::getLoopsCount( $parser ), $egLoopsCountLimit ]
 			);
 		} else {
 			$output->setLimitReportData(
