@@ -4,6 +4,10 @@
 			"McDutchie"
 		]
 	},
-	"loops-desc": "Functiones de analysator syntactic pro executar iterationes",
-	"loops_max": "Le numero maxime de iterationes ha essite executate"
+	"loops-desc": "Functiones de analysator syntactic pro executar buclas",
+	"loops_max": "Le numero maxime de buclas ha essite executate",
+	"loops-limitreport-count-limited": "Quantitate ExtLoops",
+	"loops-limitreport-count-unlimited": "Quantitate ExtLoops",
+	"loops-config-countlimit": "Variabile de configuration que defini le numero maxime de buclas permittite ('-1' => nulle limite). Isto non limita '#forargs' e '#fornumargs'.",
+	"loops-config-enabledfunctions": "Permitte definir qual functionalitates fornite per 'Loops' debe esser activate pro le wiki. Si le extension 'Variabiles' non ex installate, '#loop', '#forargs' e '#fornumargs' essera automaticamente disactivate."
 }
