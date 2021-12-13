@@ -13,7 +13,7 @@
 	"loops-limitreport-count-limited": "Label for the \"ExtLoops count\" row in the limit report table",
 	"loops-limitreport-count-limited-value": "{{optional}}\nFormat for the \"ExtLoopscount\" row in the limit report table.\n\nParameters:\n* $1 - the usage\n* $2 - the maximum",
 	"loops-limitreport-count-unlimited": "Label for the \"ExtLoops count\" row in the limit report table",
-	"loops-limitreport-count-unlimited-value": "{{optional}}\nFormat for the \"ExtLoopscount\" row in the limit report table.\n\nParameters:\n* $1 - the usage",
+	"loops-limitreport-count-unlimited-value": "{{notranslate}}\nFormat for the \"ExtLoopscount\" row in the limit report table.\n\nParameters:\n* $1 - the usage",
 	"loops-config-countlimit": "Configuration setting description of $egLoopsCountLimit",
 	"loops-config-enabledfunctions": "Configuration setting description of $egLoopsEnabledFunctions"
 }
