@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"SaldırganSincap"
 		]
 	},
 	"loops-desc": "Döngüleri gerçekleştirmek için ayrıştırıcı işlevler",
@@ -9,5 +10,5 @@
 	"loops-limitreport-count-limited": "ExtLoops sayısı",
 	"loops-limitreport-count-unlimited": "ExtLoops sayısı",
 	"loops-config-countlimit": "İzin verilen maksimum döngü sayısını tanımlayan yapılandırma değişkeni ('-1' => limitsiz). '#forargs' ve '#fornumargs' bununla sınırlı değildir.",
-	"loops-config-enabledfunctions": "'Döngüler' tarafından sağlanan hangi işlevlerin wiki için etkinleştirilmesi gerektiğini tanımlar. 'Değişkenler' uzantısı yüklü değilse, '#loop', '#forargs' ve '#fornumargs' otomatik olarak devre dışı bırakılır."
+	"loops-config-enabledfunctions": "'Loops' tarafından sağlanan hangi işlevlerin viki için etkinleştirilmesi gerektiğini tanımlar. 'Variables' uzantısı yüklü değilse, '#loop', '#forargs' ve '#fornumargs' otomatik olarak devre dışı bırakılır."
 }
