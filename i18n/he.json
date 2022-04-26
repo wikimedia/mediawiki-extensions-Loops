@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Ex-Diktator"
 		]
 	},
 	"loops-desc": "פונקציות מפענח לביצוע לולאות",
-	"loops_max": "בוצע מספר מרבי של לולאות"
+	"loops_max": "בוצע מספר מרבי של לולאות",
+	"loops-limitreport-count-limited": "מונה ExtLoops",
+	"loops-limitreport-count-unlimited": "מונה ExtLoops",
+	"loops-config-countlimit": "משתנה שמגדיר את המספר המרבי של לולאות ('<code dir=\"ltr\">-1</code>' => ללא הגבלה). '#forargs' ו-'#fornumargs' אינם מוגבלים בזה.",
+	"loops-config-enabledfunctions": "מאפשר להגדיר אילו פעולות ש-Loops מספקת צריכות להיות מופעלות בוויקי הזה. אם ההרחבה Variables לא מותקנת, '#loop'‏, '#forargs' ו-'#fornumargs' יכובו אוטומטית."
 }
