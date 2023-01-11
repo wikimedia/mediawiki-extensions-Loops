@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"loops-desc": "Funkcije razčlenjevalnika za izvajanje zank",
+	"loops_max": "Izvedenih je bilo največje število zank",
+	"loops-limitreport-count-limited": "Število ExtLoops",
+	"loops-limitreport-count-unlimited": "Število ExtLoops",
+	"loops-config-countlimit": "Konfiguracijska spremenljivka, ki določa največje dovoljeno število zank (»-1« => ni omejitve). »#forargs« in »#fornumargs« s tem nista omejena.",
+	"loops-config-enabledfunctions": "Omogoča določitev, katere funkcionalnosti, ki jih zagotavlja »Loops«, naj bodo omogočene za viki. Če razširitev »Variables« ni nameščena, bodo »#loop«, »#forargs« in »#fornumargs« samodejno onemogočeni."
+}
