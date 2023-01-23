@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Daniel Werner",
+			"Justman10000",
 			"Kghbln",
 			"MGChecker",
 			"Metalhead64"
@@ -11,5 +12,6 @@
 	"loops_max": "Die maximal zulässige Anzahl an Schleifen wurde ausgeführt",
 	"loops-limitreport-count-limited": "ExtLoops-Anzahl",
 	"loops-limitreport-count-unlimited": "ExtLoops-Anzahl",
-	"loops-config-countlimit": "Konfigurationsvariable, die die maximal erlaubte Anzahl von Schleifen definiert ('-1' => keine Begrenzung). '#forargs' und '#fornumargs' werden dadurch nicht eingeschränkt."
+	"loops-config-countlimit": "Konfigurationsvariable, die die maximal erlaubte Anzahl von Schleifen definiert ('-1' => keine Begrenzung). '#forargs' und '#fornumargs' werden dadurch nicht eingeschränkt.",
+	"loops-config-enabledfunctions": "Ermöglicht es, festzulegen, welche Funktionen von 'Schleifen' für das Wiki aktiviert werden sollen. Wenn die Erweiterung 'Variables' nicht installiert ist, werden '#loop', '#forargs' und '#fornumargs' automatisch deaktiviert."
 }
