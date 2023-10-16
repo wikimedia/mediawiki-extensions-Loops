@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Armando-Martin"
+			"Armando-Martin",
+			"No se"
 		]
 	},
 	"loops-desc": "Funciones de analizador (parser) para realizar bucles",
-	"loops_max": "Se ha realizado el número máximo de bucles"
+	"loops_max": "Se ha realizado el número máximo de bucles",
+	"loops-limitreport-count-limited": "Recuento de ExtLoops",
+	"loops-limitreport-count-unlimited": "Recuento de ExtLoops"
 }
