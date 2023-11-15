@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand"
+			"Siebrand",
+			"McDutchie"
 		]
 	},
 	"loops-desc": "Parserfuncties voor het uitvoeren van herhalingen",
-	"loops_max": "Het maximum aantal herhalingen is uitgevoerd"
+	"loops_max": "Het maximum aantal herhalingen is uitgevoerd",
+	"loops-limitreport-count-limited": "Aantal ExtLoops",
+	"loops-limitreport-count-unlimited": "Aantal ExtLoops",
+	"loops-config-countlimit": "Configuratievariabele die het maximaal toegestane aantal lussen definieert (‘-1’ ⇒ geen limiet). ‘#forargs’ en ‘#fornumargs’ worden hierdoor niet beperkt.",
+	"loops-config-enabledfunctions": "Maakt het mogelijk om te definiëren welke functionaliteiten van ‘Loops’ moeten worden ingeschakeld voor de wiki. Als de extensie ‘Variables’ niet is geïnstalleerd, worden ‘#loop’, ‘#forargs’ en ‘#fornumargs’ automatisch uitgeschakeld."
 }
