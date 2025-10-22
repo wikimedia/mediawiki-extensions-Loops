@@ -5,5 +5,9 @@
 		]
 	},
 	"loops-desc": "Funcións analíticas para levar a cabo bucles",
-	"loops_max": "Levouse a cabo o número máximo de bucles"
+	"loops_max": "Levouse a cabo o número máximo de bucles",
+	"loops-limitreport-count-limited": "Contaxe de ExtLoops",
+	"loops-limitreport-count-unlimited": "Contaxe de ExtLoops",
+	"loops-config-countlimit": "Variable de configuración que define o número máximo permitido de bucles («-1»: sen límite). «#forargs» e «#fornumargs» non están limitados por isto.",
+	"loops-config-enabledfunctions": "Permite definir que funcionalidades proporcionadas por «Loops» deben estar activadas no wiki. Se a extensión «Variables» non está instalada, «#loop», «#forargs» e «#fornumargs» desactivaranse automaticamente."
 }
