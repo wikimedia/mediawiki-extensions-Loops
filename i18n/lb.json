@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
-	"loops-desc": "Parser-Funktioune fir Schleefen auszeféieren",
+	"loops-desc": "Parserfunktioune fir Schleefen auszeféieren",
 	"loops_max": "Déi maximal Zuel vun erlaabte Schleefe gouf ausgefouert"
 }
