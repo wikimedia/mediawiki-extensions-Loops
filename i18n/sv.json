@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lokal Profil"
+			"Lokal Profil",
+			"Stefan2255"
 		]
 	},
 	"loops-desc": "Tolkningsfunktioner för att hantera loopar",
-	"loops_max": "Maximalt antal loopar har utförts"
+	"loops_max": "Maximalt antal loopar har utförts",
+	"loops-limitreport-count-limited": "ExtLoops antal",
+	"loops-limitreport-count-unlimited": "ExtLoops antal",
+	"loops-config-countlimit": "Konfigurationsvariabel som definierar maximalt tillåtet antal loopar ('-1' => ingen gräns). '#forargs' och '#fornumargs' är inte begränsade av detta.",
+	"loops-config-enabledfunctions": "Gör det möjligt att definiera vilka funktioner som tillhandahålls av 'Loops' som ska vara aktiverade för wikin. Om tillägget 'Variables' inte är installerat kommer '#loop', '#forargs' och '#fornumargs' att inaktiveras automatiskt."
 }
