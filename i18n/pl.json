@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"BeginaFelicysym"
+			"BeginaFelicysym",
+			"Woytecr"
 		]
 	},
 	"loops-desc": "Funkcje analizatora składni do wykonywania pętli",
-	"loops_max": "Została wykonana maksymalna liczba pętli"
+	"loops_max": "Została wykonana maksymalna liczba pętli",
+	"loops-limitreport-count-limited": "Liczba pętli ExtLoops",
+	"loops-limitreport-count-unlimited": "Liczba pętli ExtLoops",
+	"loops-config-countlimit": "Zmienna konfiguracyjna określająca maksymalną dozwoloną liczbę pętli ('-1' => brak limitu). Zmienne '#forargs' i '#fornumargs' nie są przez nią ograniczane.",
+	"loops-config-enabledfunctions": "Pozwala określić, które funkcje dostarczone przez \"Loops\" powinny być włączone dla wiki. Jeśli rozszerzenie 'Variables' nie jest zainstalowane, '#loop', '#forargs' i '#fornumargs' zostaną automatycznie wyłączone."
 }
