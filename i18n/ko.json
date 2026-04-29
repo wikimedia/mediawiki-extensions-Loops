@@ -2,11 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Tensama0415"
 		]
 	},
 	"loops-desc": "루프를 수행하는 것에 대한 파서 함수",
 	"loops_max": "루프의 최대 수가 수행되었습니다",
 	"loops-limitreport-count-limited": "ExtLoops 횟수",
-	"loops-limitreport-count-unlimited": "ExtLoops 횟수"
+	"loops-limitreport-count-unlimited": "ExtLoops 횟수",
+	"loops-config-countlimit": "최대 허용 루프 횟수를 정의하는 구성 변수입니다('-1' => 제한 없음). '#forargs' 및 '#fornumargs'는 이 제한의 적용을 받지 않습니다.",
+	"loops-config-enabledfunctions": "'Loops' 확장 기능에서 제공하는 기능 중 어떤 기능을 위키에서 활성화할지 정의할 수 있습니다. 'Variables' 확장 프로그램이 설치되어 있지 않으면 '#loop', '#forargs', '#fornumargs'가 자동으로 비활성화됩니다."
 }
