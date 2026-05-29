@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"loops-desc": "Shaqooyinka parser-ka ee lagu fuliyo wareegyo",
+	"loops_max": "Tirada ugu badan ee wareegyada ayaa la fuliyay",
+	"loops-limitreport-count-limited": "Tirinta wareegyada dheeraadka ah",
+	"loops-limitreport-count-unlimited": "Tirada wareegyada dheeraadka ah",
+	"loops-config-countlimit": "Isbeddelka habaynta ee qeexaya tirada ugu badan ee wareegyada la oggol yahay ('-1' => xad ma jiro). '#forargs' iyo '#fornumargs' lama xaddido.",
+	"loops-config-enabledfunctions": "Waxay oggolaanaysaa in la qeexo shaqooyinka ay bixiso 'Loops' ee laga hawlgelinayo wiki-ga. Haddii kordhinta 'Variables' aan la rakibin, '#loop', '#forargs' iyo '#fornumargs' si toos ah ayaa loo damin doonaa."
+}
