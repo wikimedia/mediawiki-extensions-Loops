@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"SussyRed2000"
+		]
+	},
+	"loops-desc": "Hàm phân tích cú pháp dùng để thực hiện vòng lặp",
+	"loops_max": "Số vòng lặp tối đa đã được thực hiện",
+	"loops-limitreport-count-limited": "Số ExtLoop",
+	"loops-limitreport-count-unlimited": "Số ExtLoop",
+	"loops-config-countlimit": "Biến cấu hình xác định số vòng lặp cho phép tối đa ('-1' => không giới hạn). '#forargs' và '#fornumargs' không có giới hạn.",
+	"loops-config-enabledfunctions": "Cho phép xác định chức năng nào do 'Loops' cung cấp nên được kích hoạt cho wiki. Nếu tiện ích mở rộng 'Variables' chưa được cài đặt, '#loop', '#forargs' và '#fornumargs' sẽ tự động bị vô hiệu hóa."
+}
