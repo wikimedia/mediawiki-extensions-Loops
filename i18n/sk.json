@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"loops-desc": "Funkcie syntaktického analyzátora na vykonávanie cyklov",
+	"loops_max": "Bol vykonaný maximálny počet cyklov",
+	"loops-limitreport-count-limited": "Počet ExtLoops",
+	"loops-limitreport-count-unlimited": "Počet ExtLoops",
+	"loops-config-countlimit": "Konfiguračná premenná určujúca maximálny povolený počet cyklov („-1“ => bez obmedzenia). Funkcie „#forargs“ a „#fornumargs“ ňou nie sú obmedzené.",
+	"loops-config-enabledfunctions": "Umožňuje určiť, ktoré funkcie rozšírenia „Loops“ majú byť na wiki zapnuté. Ak nie je nainštalované rozšírenie „Variables“, funkcie „#loop“, „#forargs“ a „#fornumargs“ sa automaticky vypnú."
+}
